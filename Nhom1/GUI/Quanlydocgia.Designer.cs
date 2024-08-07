@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            cbbtenloaidocgia = new ComboBox();
+            label10 = new Label();
+            txtsodienthoai = new TextBox();
+            label9 = new Label();
+            txtcccd = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            txtemail = new TextBox();
+            label4 = new Label();
+            datengaysinh = new DateTimePicker();
             btnclear = new Button();
             btnhienthi = new Button();
             btnsua = new Button();
@@ -44,16 +54,6 @@
             txtTimKiem = new TextBox();
             label8 = new Label();
             label2 = new Label();
-            datengaysinh = new DateTimePicker();
-            txtemail = new TextBox();
-            label4 = new Label();
-            label6 = new Label();
-            txtcccd = new TextBox();
-            label7 = new Label();
-            txtsodienthoai = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            cbbtenloaidocgia = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -88,6 +88,92 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Độc Giả";
             // 
+            // cbbtenloaidocgia
+            // 
+            cbbtenloaidocgia.FormattingEnabled = true;
+            cbbtenloaidocgia.Location = new Point(164, 113);
+            cbbtenloaidocgia.Name = "cbbtenloaidocgia";
+            cbbtenloaidocgia.Size = new Size(485, 28);
+            cbbtenloaidocgia.TabIndex = 138;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label10.Location = new Point(23, 116);
+            label10.Name = "label10";
+            label10.Size = new Size(125, 20);
+            label10.TabIndex = 137;
+            label10.Text = "Tên Loại Độc Giả";
+            // 
+            // txtsodienthoai
+            // 
+            txtsodienthoai.Location = new Point(164, 419);
+            txtsodienthoai.Name = "txtsodienthoai";
+            txtsodienthoai.Size = new Size(489, 27);
+            txtsodienthoai.TabIndex = 136;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label9.Location = new Point(12, 426);
+            label9.Name = "label9";
+            label9.Size = new Size(105, 20);
+            label9.TabIndex = 135;
+            label9.Text = "Số Điện Thoại";
+            // 
+            // txtcccd
+            // 
+            txtcccd.Location = new Point(164, 369);
+            txtcccd.Name = "txtcccd";
+            txtcccd.Size = new Size(489, 27);
+            txtcccd.TabIndex = 134;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label7.Location = new Point(23, 376);
+            label7.Name = "label7";
+            label7.Size = new Size(47, 20);
+            label7.TabIndex = 133;
+            label7.Text = "CCCD";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label6.Location = new Point(23, 199);
+            label6.Name = "label6";
+            label6.Size = new Size(80, 20);
+            label6.TabIndex = 132;
+            label6.Text = "Ngày Sinh";
+            // 
+            // txtemail
+            // 
+            txtemail.Location = new Point(160, 317);
+            txtemail.Name = "txtemail";
+            txtemail.Size = new Size(489, 27);
+            txtemail.TabIndex = 131;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(23, 324);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 20);
+            label4.TabIndex = 130;
+            label4.Text = "Email";
+            // 
+            // datengaysinh
+            // 
+            datengaysinh.Location = new Point(160, 194);
+            datengaysinh.Name = "datengaysinh";
+            datengaysinh.Size = new Size(489, 27);
+            datengaysinh.TabIndex = 129;
+            // 
             // btnclear
             // 
             btnclear.BackColor = Color.FromArgb(255, 192, 128);
@@ -98,6 +184,7 @@
             btnclear.TabIndex = 128;
             btnclear.Text = "Clear";
             btnclear.UseVisualStyleBackColor = false;
+            btnclear.Click += btnclear_Click;
             // 
             // btnhienthi
             // 
@@ -109,6 +196,7 @@
             btnhienthi.TabIndex = 127;
             btnhienthi.Text = "Hiển Thị";
             btnhienthi.UseVisualStyleBackColor = false;
+            btnhienthi.Click += btnhienthi_Click;
             // 
             // btnsua
             // 
@@ -120,6 +208,7 @@
             btnsua.TabIndex = 125;
             btnsua.Text = "Sửa";
             btnsua.UseVisualStyleBackColor = false;
+            btnsua.Click += btnsua_Click;
             // 
             // btnthem
             // 
@@ -131,6 +220,7 @@
             btnthem.TabIndex = 124;
             btnthem.Text = "Thêm";
             btnthem.UseVisualStyleBackColor = false;
+            btnthem.Click += btnthem_Click;
             // 
             // txtdiachi
             // 
@@ -206,6 +296,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(755, 486);
             dataGridView1.TabIndex = 126;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // txtTimKiem
             // 
@@ -214,6 +305,7 @@
             txtTimKiem.PlaceholderText = "Tìm Kiếm Theo Tên Độc Giả ";
             txtTimKiem.Size = new Size(551, 27);
             txtTimKiem.TabIndex = 125;
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // label8
             // 
@@ -236,92 +328,6 @@
             label2.Size = new Size(233, 38);
             label2.TabIndex = 133;
             label2.Text = "Quản Lý Độc Giả";
-            // 
-            // datengaysinh
-            // 
-            datengaysinh.Location = new Point(160, 194);
-            datengaysinh.Name = "datengaysinh";
-            datengaysinh.Size = new Size(489, 27);
-            datengaysinh.TabIndex = 129;
-            // 
-            // txtemail
-            // 
-            txtemail.Location = new Point(160, 317);
-            txtemail.Name = "txtemail";
-            txtemail.Size = new Size(489, 27);
-            txtemail.TabIndex = 131;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(23, 324);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 20);
-            label4.TabIndex = 130;
-            label4.Text = "Email";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(23, 199);
-            label6.Name = "label6";
-            label6.Size = new Size(80, 20);
-            label6.TabIndex = 132;
-            label6.Text = "Ngày Sinh";
-            // 
-            // txtcccd
-            // 
-            txtcccd.Location = new Point(164, 369);
-            txtcccd.Name = "txtcccd";
-            txtcccd.Size = new Size(489, 27);
-            txtcccd.TabIndex = 134;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label7.Location = new Point(23, 376);
-            label7.Name = "label7";
-            label7.Size = new Size(47, 20);
-            label7.TabIndex = 133;
-            label7.Text = "CCCD";
-            // 
-            // txtsodienthoai
-            // 
-            txtsodienthoai.Location = new Point(164, 419);
-            txtsodienthoai.Name = "txtsodienthoai";
-            txtsodienthoai.Size = new Size(489, 27);
-            txtsodienthoai.TabIndex = 136;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(12, 426);
-            label9.Name = "label9";
-            label9.Size = new Size(105, 20);
-            label9.TabIndex = 135;
-            label9.Text = "Số Điện Thoại";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label10.Location = new Point(23, 116);
-            label10.Name = "label10";
-            label10.Size = new Size(125, 20);
-            label10.TabIndex = 137;
-            label10.Text = "Tên Loại Độc Giả";
-            // 
-            // cbbtenloaidocgia
-            // 
-            cbbtenloaidocgia.FormattingEnabled = true;
-            cbbtenloaidocgia.Location = new Point(164, 113);
-            cbbtenloaidocgia.Name = "cbbtenloaidocgia";
-            cbbtenloaidocgia.Size = new Size(485, 28);
-            cbbtenloaidocgia.TabIndex = 138;
             // 
             // Quanlydocgia
             // 

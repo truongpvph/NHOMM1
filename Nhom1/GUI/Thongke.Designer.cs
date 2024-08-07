@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label3 = new Label();
+            labtongsoluongsachchomuon = new Label();
+            label4 = new Label();
+            lbldausach = new Label();
             labtongslsach = new Label();
             labtongsoluongdausach = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            tongphieutra = new Label();
+            lbltongpt = new Label();
             label6 = new Label();
             labtongphieumuon = new Label();
             label5 = new Label();
             groupBox3 = new GroupBox();
             dataGridView1 = new DataGridView();
             button1 = new Button();
-            labtongsoluongsachchomuon = new Label();
-            label4 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             groupBox1.Controls.Add(labtongsoluongsachchomuon);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(lbldausach);
             groupBox1.Controls.Add(labtongslsach);
             groupBox1.Controls.Add(labtongsoluongdausach);
             groupBox1.Controls.Add(label1);
@@ -64,14 +64,32 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thống Kê Sách";
             // 
-            // label3
+            // labtongsoluongsachchomuon
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(321, 84);
-            label3.Name = "label3";
-            label3.Size = new Size(17, 20);
-            label3.TabIndex = 3;
-            label3.Text = "0";
+            labtongsoluongsachchomuon.AutoSize = true;
+            labtongsoluongsachchomuon.Location = new Point(321, 136);
+            labtongsoluongsachchomuon.Name = "labtongsoluongsachchomuon";
+            labtongsoluongsachchomuon.Size = new Size(17, 20);
+            labtongsoluongsachchomuon.TabIndex = 5;
+            labtongsoluongsachchomuon.Text = "0";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(40, 136);
+            label4.Name = "label4";
+            label4.Size = new Size(218, 20);
+            label4.TabIndex = 4;
+            label4.Text = "Tổng Số Lượng Sách Cho Mượn";
+            // 
+            // lbldausach
+            // 
+            lbldausach.AutoSize = true;
+            lbldausach.Location = new Point(321, 84);
+            lbldausach.Name = "lbldausach";
+            lbldausach.Size = new Size(17, 20);
+            lbldausach.TabIndex = 3;
+            lbldausach.Text = "0";
             // 
             // labtongslsach
             // 
@@ -81,6 +99,7 @@
             labtongslsach.Size = new Size(17, 20);
             labtongslsach.TabIndex = 2;
             labtongslsach.Text = "0";
+            labtongslsach.Click += labtongslsach_Click;
             // 
             // labtongsoluongdausach
             // 
@@ -102,7 +121,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(tongphieutra);
+            groupBox2.Controls.Add(lbltongpt);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(labtongphieumuon);
             groupBox2.Controls.Add(label5);
@@ -113,14 +132,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thống Kê Phiếu Mượn-Trả";
             // 
-            // tongphieutra
+            // lbltongpt
             // 
-            tongphieutra.AutoSize = true;
-            tongphieutra.Location = new Point(290, 84);
-            tongphieutra.Name = "tongphieutra";
-            tongphieutra.Size = new Size(17, 20);
-            tongphieutra.TabIndex = 7;
-            tongphieutra.Text = "0";
+            lbltongpt.AutoSize = true;
+            lbltongpt.Location = new Point(290, 84);
+            lbltongpt.Name = "lbltongpt";
+            lbltongpt.Size = new Size(17, 20);
+            lbltongpt.TabIndex = 7;
+            lbltongpt.Text = "0";
             // 
             // label6
             // 
@@ -161,6 +180,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(6, 42);
             dataGridView1.Name = "dataGridView1";
@@ -176,24 +196,7 @@
             button1.TabIndex = 3;
             button1.Text = "Xem Chi Tiết Phiếu Quá Hạn";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // labtongsoluongsachchomuon
-            // 
-            labtongsoluongsachchomuon.AutoSize = true;
-            labtongsoluongsachchomuon.Location = new Point(321, 136);
-            labtongsoluongsachchomuon.Name = "labtongsoluongsachchomuon";
-            labtongsoluongsachchomuon.Size = new Size(17, 20);
-            labtongsoluongsachchomuon.TabIndex = 5;
-            labtongsoluongsachchomuon.Text = "0";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(40, 136);
-            label4.Name = "label4";
-            label4.Size = new Size(218, 20);
-            label4.TabIndex = 4;
-            label4.Text = "Tổng Số Lượng Sách Cho Mượn";
+            button1.Click += button1_Click;
             // 
             // Thongke
             // 
@@ -217,12 +220,12 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Label label3;
+        private Label lbldausach;
         private Label labtongslsach;
         private Label labtongsoluongdausach;
         private Label label1;
         private GroupBox groupBox2;
-        private Label tongphieutra;
+        private Label lbltongpt;
         private Label label6;
         private Label labtongphieumuon;
         private Label label5;

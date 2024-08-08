@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            cbbtenloaidocgia = new ComboBox();
+            txtsoluong = new TextBox();
+            label4 = new Label();
             btnclear = new Button();
             btnhienthi = new Button();
             btnsua = new Button();
@@ -39,21 +42,18 @@
             label3 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dtgquanlyldg = new DataGridView();
             txtTimKiem = new TextBox();
             label8 = new Label();
             label2 = new Label();
-            label4 = new Label();
-            txtsoluong = new TextBox();
-            comboBox1 = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgquanlyldg).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cbbtenloaidocgia);
             groupBox1.Controls.Add(txtsoluong);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(btnclear);
@@ -72,6 +72,31 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Loại Độc Giả";
             // 
+            // cbbtenloaidocgia
+            // 
+            cbbtenloaidocgia.FormattingEnabled = true;
+            cbbtenloaidocgia.Location = new Point(173, 143);
+            cbbtenloaidocgia.Name = "cbbtenloaidocgia";
+            cbbtenloaidocgia.Size = new Size(488, 28);
+            cbbtenloaidocgia.TabIndex = 131;
+            // 
+            // txtsoluong
+            // 
+            txtsoluong.Location = new Point(172, 201);
+            txtsoluong.Name = "txtsoluong";
+            txtsoluong.Size = new Size(489, 27);
+            txtsoluong.TabIndex = 130;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(6, 208);
+            label4.Name = "label4";
+            label4.Size = new Size(157, 20);
+            label4.TabIndex = 129;
+            label4.Text = "Số Sách Mượn Tối Đa";
+            // 
             // btnclear
             // 
             btnclear.BackColor = Color.FromArgb(255, 192, 128);
@@ -82,6 +107,7 @@
             btnclear.TabIndex = 128;
             btnclear.Text = "Clear";
             btnclear.UseVisualStyleBackColor = false;
+            btnclear.Click += btnclear_Click;
             // 
             // btnhienthi
             // 
@@ -93,6 +119,7 @@
             btnhienthi.TabIndex = 127;
             btnhienthi.Text = "Hiển Thị";
             btnhienthi.UseVisualStyleBackColor = false;
+            btnhienthi.Click += btnhienthi_Click;
             // 
             // btnsua
             // 
@@ -104,6 +131,7 @@
             btnsua.TabIndex = 125;
             btnsua.Text = "Sửa";
             btnsua.UseVisualStyleBackColor = false;
+            btnsua.Click += btnsua_Click;
             // 
             // btnthem
             // 
@@ -115,6 +143,7 @@
             btnthem.TabIndex = 124;
             btnthem.Text = "Thêm";
             btnthem.UseVisualStyleBackColor = false;
+            btnthem.Click += btnthem_Click;
             // 
             // txtngaymuontoida
             // 
@@ -164,7 +193,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
+            groupBox2.Controls.Add(dtgquanlyldg);
             groupBox2.Controls.Add(txtTimKiem);
             groupBox2.Controls.Add(label8);
             groupBox2.Location = new Point(756, 135);
@@ -174,15 +203,16 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách Độc Giả";
             // 
-            // dataGridView1
+            // dtgquanlyldg
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(9, 127);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(755, 486);
-            dataGridView1.TabIndex = 126;
+            dtgquanlyldg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgquanlyldg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgquanlyldg.Location = new Point(3, 127);
+            dtgquanlyldg.Name = "dtgquanlyldg";
+            dtgquanlyldg.RowHeadersWidth = 51;
+            dtgquanlyldg.Size = new Size(755, 486);
+            dtgquanlyldg.TabIndex = 126;
+            dtgquanlyldg.CellClick += dtgquanlyldg_CellClick;
             // 
             // txtTimKiem
             // 
@@ -191,6 +221,7 @@
             txtTimKiem.PlaceholderText = "Tìm Kiếm Theo Tên Độc Giả ";
             txtTimKiem.Size = new Size(551, 27);
             txtTimKiem.TabIndex = 125;
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // label8
             // 
@@ -214,31 +245,6 @@
             label2.TabIndex = 136;
             label2.Text = "Loại Độc Giả";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(6, 208);
-            label4.Name = "label4";
-            label4.Size = new Size(157, 20);
-            label4.TabIndex = 129;
-            label4.Text = "Số Sách Mượn Tối Đa";
-            // 
-            // txtsoluong
-            // 
-            txtsoluong.Location = new Point(172, 201);
-            txtsoluong.Name = "txtsoluong";
-            txtsoluong.Size = new Size(489, 27);
-            txtsoluong.TabIndex = 130;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(173, 143);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(488, 28);
-            comboBox1.TabIndex = 131;
-            // 
             // Loaidocgia
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -248,11 +254,12 @@
             Controls.Add(label2);
             Name = "Loaidocgia";
             Size = new Size(1639, 776);
+            Load += Loaidocgia_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgquanlyldg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -270,12 +277,12 @@
         private Label label3;
         private Label label1;
         private GroupBox groupBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dtgquanlyldg;
         private TextBox txtTimKiem;
         private Label label8;
         private Label label2;
         private TextBox txtsoluong;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox cbbtenloaidocgia;
     }
 }

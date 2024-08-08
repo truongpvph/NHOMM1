@@ -30,6 +30,10 @@
         {
             panel1 = new Panel();
             menuStrip1 = new MenuStrip();
+            heToolStripMenuItem = new ToolStripMenuItem();
+            đăngNhậpToolStripMenuItem = new ToolStripMenuItem();
+            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
+            thoátToolStripMenuItem = new ToolStripMenuItem();
             quảnLýTàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
             quảnLýThểLoạiToolStripMenuItem = new ToolStripMenuItem();
             quảnLýNhàXuấtBảnToolStripMenuItem = new ToolStripMenuItem();
@@ -44,10 +48,6 @@
             Laphieutra = new ToolStripMenuItem();
             quảnLýSáchToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
-            heToolStripMenuItem = new ToolStripMenuItem();
-            đăngNhậpToolStripMenuItem = new ToolStripMenuItem();
-            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
-            thoátToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,6 +75,41 @@
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
+            // heToolStripMenuItem
+            // 
+            heToolStripMenuItem.BackColor = Color.Black;
+            heToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đăngNhậpToolStripMenuItem, đăngXuấtToolStripMenuItem, thoátToolStripMenuItem });
+            heToolStripMenuItem.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            heToolStripMenuItem.ForeColor = Color.White;
+            heToolStripMenuItem.Name = "heToolStripMenuItem";
+            heToolStripMenuItem.Padding = new Padding(25);
+            heToolStripMenuItem.Size = new Size(218, 77);
+            heToolStripMenuItem.Text = "Hệ Thống";
+            // 
+            // đăngNhậpToolStripMenuItem
+            // 
+            đăngNhậpToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
+            đăngNhậpToolStripMenuItem.ForeColor = Color.White;
+            đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
+            đăngNhậpToolStripMenuItem.Size = new Size(190, 28);
+            đăngNhậpToolStripMenuItem.Text = "Đăng Nhập ";
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            đăngXuấtToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
+            đăngXuấtToolStripMenuItem.ForeColor = Color.White;
+            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            đăngXuấtToolStripMenuItem.Size = new Size(190, 28);
+            đăngXuấtToolStripMenuItem.Text = "Đăng Xuất ";
+            // 
+            // thoátToolStripMenuItem
+            // 
+            thoátToolStripMenuItem.BackColor = Color.Black;
+            thoátToolStripMenuItem.ForeColor = Color.White;
+            thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            thoátToolStripMenuItem.Size = new Size(190, 28);
+            thoátToolStripMenuItem.Text = "Thoát";
+            // 
             // quảnLýTàiKhoảnToolStripMenuItem
             // 
             quảnLýTàiKhoảnToolStripMenuItem.ForeColor = Color.White;
@@ -90,6 +125,7 @@
             quảnLýThểLoạiToolStripMenuItem.Padding = new Padding(25);
             quảnLýThểLoạiToolStripMenuItem.Size = new Size(218, 77);
             quảnLýThểLoạiToolStripMenuItem.Text = "Quản Lý Thể Loại";
+            quảnLýThểLoạiToolStripMenuItem.Click += quảnLýThểLoạiToolStripMenuItem_Click;
             // 
             // quảnLýNhàXuấtBảnToolStripMenuItem
             // 
@@ -98,6 +134,7 @@
             quảnLýNhàXuấtBảnToolStripMenuItem.Padding = new Padding(25);
             quảnLýNhàXuấtBảnToolStripMenuItem.Size = new Size(218, 77);
             quảnLýNhàXuấtBảnToolStripMenuItem.Text = "Quản Lý Nhà Xuất Bản";
+            quảnLýNhàXuấtBảnToolStripMenuItem.Click += quảnLýNhàXuấtBảnToolStripMenuItem_Click;
             // 
             // quảnLýĐộcGiảToolStripMenuItem
             // 
@@ -114,6 +151,7 @@
             loaidocgia.Padding = new Padding(25);
             loaidocgia.Size = new Size(218, 77);
             loaidocgia.Text = "Loại Độc Giả";
+            loaidocgia.Click += loaidocgia_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -190,41 +228,6 @@
             label1.Size = new Size(13, 20);
             label1.TabIndex = 11;
             label1.Text = " ";
-            // 
-            // heToolStripMenuItem
-            // 
-            heToolStripMenuItem.BackColor = Color.Black;
-            heToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đăngNhậpToolStripMenuItem, đăngXuấtToolStripMenuItem, thoátToolStripMenuItem });
-            heToolStripMenuItem.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            heToolStripMenuItem.ForeColor = Color.White;
-            heToolStripMenuItem.Name = "heToolStripMenuItem";
-            heToolStripMenuItem.Padding = new Padding(25);
-            heToolStripMenuItem.Size = new Size(218, 77);
-            heToolStripMenuItem.Text = "Hệ Thống";
-            // 
-            // đăngNhậpToolStripMenuItem
-            // 
-            đăngNhậpToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
-            đăngNhậpToolStripMenuItem.ForeColor = Color.White;
-            đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            đăngNhậpToolStripMenuItem.Size = new Size(224, 28);
-            đăngNhậpToolStripMenuItem.Text = "Đăng Nhập ";
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            đăngXuấtToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
-            đăngXuấtToolStripMenuItem.ForeColor = Color.White;
-            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(224, 28);
-            đăngXuấtToolStripMenuItem.Text = "Đăng Xuất ";
-            // 
-            // thoátToolStripMenuItem
-            // 
-            thoátToolStripMenuItem.BackColor = Color.Black;
-            thoátToolStripMenuItem.ForeColor = Color.White;
-            thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            thoátToolStripMenuItem.Size = new Size(224, 28);
-            thoátToolStripMenuItem.Text = "Thoát";
             // 
             // GiaoDien
             // 

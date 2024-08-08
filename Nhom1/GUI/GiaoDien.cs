@@ -21,5 +21,29 @@ namespace GUI
         {
 
         }
+        private void panel(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+        private void quảnLýThểLoạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Quanlytheloai quanlytheloai = new Quanlytheloai();
+            panel(quanlytheloai);
+        }
+
+        private void quảnLýNhàXuấtBảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Quanlynhaxuatban quanlynhaxuatban = new Quanlynhaxuatban();
+            panel(quanlynhaxuatban);
+        }
+
+        private void loaidocgia_Click(object sender, EventArgs e)
+        {
+            Loaidocgia loaidocgia = new Loaidocgia();
+            panel(loaidocgia);
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dtgquanlytl = new DataGridView();
             txtTimKiem = new TextBox();
             label8 = new Label();
             groupBox1 = new GroupBox();
@@ -43,13 +43,13 @@
             label1 = new Label();
             label2 = new Label();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgquanlytl).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
+            groupBox2.Controls.Add(dtgquanlytl);
             groupBox2.Controls.Add(txtTimKiem);
             groupBox2.Controls.Add(label8);
             groupBox2.Location = new Point(743, 152);
@@ -59,15 +59,16 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách Thể Loại ";
             // 
-            // dataGridView1
+            // dtgquanlytl
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 116);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(762, 499);
-            dataGridView1.TabIndex = 128;
+            dtgquanlytl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgquanlytl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgquanlytl.Location = new Point(6, 116);
+            dtgquanlytl.Name = "dtgquanlytl";
+            dtgquanlytl.RowHeadersWidth = 51;
+            dtgquanlytl.Size = new Size(762, 499);
+            dtgquanlytl.TabIndex = 128;
+            dtgquanlytl.CellClick += dtgquanlytl_CellClick;
             // 
             // txtTimKiem
             // 
@@ -76,6 +77,7 @@
             txtTimKiem.PlaceholderText = "Tìm Kiếm Theo Tên Thể Loại";
             txtTimKiem.Size = new Size(525, 27);
             txtTimKiem.TabIndex = 125;
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // label8
             // 
@@ -115,6 +117,7 @@
             btnclear.TabIndex = 127;
             btnclear.Text = "Clear";
             btnclear.UseVisualStyleBackColor = false;
+            btnclear.Click += btnclear_Click;
             // 
             // btnhienthi
             // 
@@ -126,6 +129,7 @@
             btnhienthi.TabIndex = 126;
             btnhienthi.Text = "Hiển Thị";
             btnhienthi.UseVisualStyleBackColor = false;
+            btnhienthi.Click += btnhienthi_Click;
             // 
             // btnsua
             // 
@@ -137,6 +141,7 @@
             btnsua.TabIndex = 125;
             btnsua.Text = "Sửa";
             btnsua.UseVisualStyleBackColor = false;
+            btnsua.Click += btnsua_Click;
             // 
             // btnthem
             // 
@@ -148,6 +153,7 @@
             btnthem.TabIndex = 124;
             btnthem.Text = "Thêm";
             btnthem.UseVisualStyleBackColor = false;
+            btnthem.Click += btnthem_Click;
             // 
             // txttentheloai
             // 
@@ -208,7 +214,7 @@
             Size = new Size(1521, 780);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgquanlytl).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -218,7 +224,7 @@
         #endregion
 
         private GroupBox groupBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dtgquanlytl;
         private TextBox txtTimKiem;
         private Label label8;
         private GroupBox groupBox1;

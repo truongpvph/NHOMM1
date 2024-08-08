@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dtgquanlynxb = new DataGridView();
             label8 = new Label();
             Clear = new Button();
             btnhienthi = new Button();
@@ -48,20 +48,21 @@
             txtSoDienThoai = new TextBox();
             groupBox1 = new GroupBox();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgquanlynxb).BeginInit();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dtgquanlynxb
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 111);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(768, 486);
-            dataGridView1.TabIndex = 129;
+            dtgquanlynxb.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgquanlynxb.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgquanlynxb.Location = new Point(6, 111);
+            dtgquanlynxb.Name = "dtgquanlynxb";
+            dtgquanlynxb.RowHeadersWidth = 51;
+            dtgquanlynxb.Size = new Size(768, 486);
+            dtgquanlynxb.TabIndex = 129;
+            dtgquanlynxb.CellClick += dtgquanlynxb_CellClick;
             // 
             // label8
             // 
@@ -84,6 +85,7 @@
             Clear.TabIndex = 151;
             Clear.Text = "Clear";
             Clear.UseVisualStyleBackColor = false;
+            Clear.Click += Clear_Click;
             // 
             // btnhienthi
             // 
@@ -95,6 +97,7 @@
             btnhienthi.TabIndex = 150;
             btnhienthi.Text = "Hiển Thị";
             btnhienthi.UseVisualStyleBackColor = false;
+            btnhienthi.Click += btnhienthi_Click;
             // 
             // btnsua
             // 
@@ -106,6 +109,7 @@
             btnsua.TabIndex = 148;
             btnsua.Text = "Sửa";
             btnsua.UseVisualStyleBackColor = false;
+            btnsua.Click += btnsua_Click;
             // 
             // btnthem
             // 
@@ -117,6 +121,7 @@
             btnthem.TabIndex = 147;
             btnthem.Text = "Thêm";
             btnthem.UseVisualStyleBackColor = false;
+            btnthem.Click += btnthem_Click;
             // 
             // txtemail
             // 
@@ -149,6 +154,7 @@
             txtTimKiem.PlaceholderText = "Tìm Kiếm Theo Nhà Xuất Bản ";
             txtTimKiem.Size = new Size(401, 27);
             txtTimKiem.TabIndex = 128;
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // label2
             // 
@@ -238,7 +244,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dtgquanlynxb);
             groupBox1.Controls.Add(txtTimKiem);
             groupBox1.Controls.Add(label8);
             groupBox1.Location = new Point(777, 148);
@@ -267,7 +273,7 @@
             Controls.Add(label6);
             Name = "Quanlynhaxuatban";
             Size = new Size(1575, 866);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgquanlynxb).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -278,7 +284,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dtgquanlynxb;
         private Label label8;
         private Button Clear;
         private Button btnhienthi;
